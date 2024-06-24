@@ -12,6 +12,7 @@ public class Car {
     }
 
     public Car (Long id , String brand, String model, int year, String color, Long price ){
+        this.id=id;
         this.brand = brand;
         this.model = model;
         this.year = year;
