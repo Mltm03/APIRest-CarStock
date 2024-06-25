@@ -31,7 +31,7 @@ public class CarController {
         return service.findByIdCar(id);
     }
     @GetMapping("/tax/{id}")
-    public Long ShowTax(@PathVariable Long id){
+    public List <Car> ShowTax(@PathVariable Long id){
         return service.getPricewithTax(id);
     }
 

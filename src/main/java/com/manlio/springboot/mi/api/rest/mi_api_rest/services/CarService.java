@@ -1,5 +1,6 @@
 package com.manlio.springboot.mi.api.rest.mi_api_rest.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,15 @@ public class CarService implements ICarService {
     }
 
     @Override
-    public Long getPricewithTax(Long id) {
-        Car actualCar=repository.findByIdCar(id);
-        return actualCar.getPrice()+235;
+    public List <Car> getPricewithTax(Long id) {
+       List <Car> carsWithTax = new ArrayList<>();
+       carsWithTax.add(repository.findByIdCar(id));
+       Long newPrice = carsWithTax.get(0).getPrice()+250L;
+       carsWithTax.get(0).setPrice(newPrice); 
+       return carsWithTax;
 
+
+       //falta aplicar inmutabilidad con la clase cloneable
     }
 
 }

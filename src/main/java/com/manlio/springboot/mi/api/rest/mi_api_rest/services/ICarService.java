@@ -8,7 +8,7 @@ public interface ICarService {
 
     List <Car> findAll();
     Car findByIdCar(Long id);
-    Long getPricewithTax(Long id);
+    List <Car> getPricewithTax(Long id);
 
 
 }
