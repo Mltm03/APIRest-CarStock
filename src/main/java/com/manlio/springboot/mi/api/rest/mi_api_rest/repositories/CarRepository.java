@@ -3,9 +3,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.manlio.springboot.mi.api.rest.mi_api_rest.models.Car;
 
+
+@RequestScope //esto hace que casa request sea separado evita la mutabilidad pero es mejor usar tanto cloneable y esto
 @Repository //indicamos el tipo de componente
 public class CarRepository implements ICarRepository{
 
